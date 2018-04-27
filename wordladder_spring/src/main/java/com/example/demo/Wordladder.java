@@ -97,19 +97,17 @@ public class Wordladder
         logindata.put("Danny", "980522");
         logindata.put("Daisy", "990720");
             if ((logindata.containsKey(w3)==true) && logindata.get(w3).equals(w4)) {
-                //定义一个字符串（A-Z，a-z，0-9）即62位；
+                //define a string（A-Z，a-z，0-9；
                 String str="zxcvbnmlkjhgfdsaqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
-                //由Random生成随机数
+                //Use Random to create random number
                 Random random=new Random();
                 StringBuffer rs=new StringBuffer();
-                //长度为几就循环几次
+                //loop for the value of i
                 for(int i=0; i<20; ++i){
-                    //产生0-61的数字
+                    //create number between 0 and 61
                     int number=random.nextInt(62);
-                    //将产生的数字通过length次承载到sb中
                     rs.append(str.charAt(number));
                 }
-                //将承载的字符转换成字符串
                 token=rs.toString();
                 tokenlist.add(token);
                 return "login success";
